@@ -14,7 +14,7 @@ Java_Encrypt_encrypt(
  	
  	for (int i = 0; i < len; ++i)
  	{
- 		dst[i] = dst[i] ^ 0x07;
+ 		dst[i] = dst[i] ^ 0x09;
  	}
  
     _env->SetByteArrayRegion(_buf, 0, len, (jbyte *)dst);

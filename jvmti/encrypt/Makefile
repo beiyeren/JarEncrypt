@@ -9,7 +9,7 @@ ifeq ($(shell uname), Darwin)
   CC		 = g++ 
   LIBLINK    = -dynamiclib
   TARGET     = libencrypt.dylib
-  INCLUDEDIR = -I/System/Library/Frameworks/JavaVM.framework/Headers
+  INCLUDEDIR = -I/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/include/darwin
 endif
 
 OBJS = encrypt.o

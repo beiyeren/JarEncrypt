@@ -24,10 +24,10 @@ MyClassFileLoadHook(
  
     unsigned char* my_data = *new_class_data;
 
-    if(name&&strncmp(name,"com/monkey/",11)==0){
+    if(name&&strncmp(name,"com/",4)==0){
         for (int i = 0; i < class_data_len; ++i)
         {
-            my_data[i] = class_data[i] ^ 0x07;
+            my_data[i] = class_data[i] ^ 0x09;
         }
     }else{
         for (int i = 0; i < class_data_len; ++i)
