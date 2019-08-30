@@ -90,7 +90,7 @@ public class Encrypt {
 			byte[] bytes = baos.toByteArray();
 
 			String name = entry.getName();
-			if(name.endsWith(".class")){
+			if(name.contains("com.qst.security.wms") && name.endsWith(".class")){
 				System.out.println("encrypt " + name.replaceAll("/", "."));
 				try {
 					bytes = coder.encrypt(bytes);
