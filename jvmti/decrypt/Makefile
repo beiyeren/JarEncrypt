@@ -1,6 +1,6 @@
 ifeq ($(shell uname), Linux)
   CC         = g++ 
-  LIBLINK    = -shared 
+  LIBLINK    = -shared -fPIC
   INCLUDEDIR = -I/usr/java/jdk1.8.0_171-amd64/include -I/usr/java/jdk1.8.0_171-amd64/include/linux
   TARGET     = libdecrypt.so
 endif
