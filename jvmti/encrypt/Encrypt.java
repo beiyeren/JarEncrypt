@@ -47,11 +47,18 @@ public class Encrypt {
 			return;
 		}
 
+		//boolean类型
+		if (Boolean.FALSE.equals(src_name.endsWith("jar") || src_name.endsWith("war"))){
+            System.out.println("usage: java Encrypt -src xxx.jar");
+            return;
+        }
+
 		Encrypt coder = new Encrypt();
 
 		String dst_name = map.get("-dst");
-		if (dst_name == null || dst_name.equals(src_name))
-			dst_name = src_name.substring(0, src_name.length() - 4) + "_encrypt.jar";
+		if (dst_name == null || dst_name.equals(src_name)) {
+            dst_name = "encrypt_" + src_name;
+        }
 
 		System.out.printf("encode jar file: [%s ==> %s ]\n", src_name, dst_name);
 
