@@ -43,7 +43,7 @@ public class Encrypt {
 
 		String src_name = map.get("-src");
 		if (src_name == null) {
-			System.out.println("usage: java Encrypt -src xxx.jar");
+			System.out.println("usage: java Encrypt -src xxx.jar or java Encrypt -src xxx.war");
 			return;
 		}
 
@@ -53,11 +53,18 @@ public class Encrypt {
             return;
         }
 
+		File file = new File(src_name);
+		if(!file.exists()){
+            System.out.println("file not exist");
+            return;
+        }
+        String filename = file.getName();
+
 		Encrypt coder = new Encrypt();
 
 		String dst_name = map.get("-dst");
-		if (dst_name == null || dst_name.equals(src_name)) {
-            dst_name = "encrypt_" + src_name;
+		if (dst_name == null || dst_name.equals(filename)) {
+            dst_name = "encrypt_" + filename;
         }
 
 		System.out.printf("encode jar file: [%s ==> %s ]\n", src_name, dst_name);
